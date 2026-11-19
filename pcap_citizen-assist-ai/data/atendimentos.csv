@@ -1,0 +1,14 @@
+﻿data,origem,pergunta,perguntas,id_orientacao,encontrou,ajudou,tentativas,tempo_segundos,facilidade,participante,modo
+2026-11-15T18:41:44,pergunta,Como começar a estudar Python?,Como começar a estudar Python?,1,True,False,1,35.7,,P-C59C0D,teste
+2026-11-15T18:42:32,pergunta,Como conseguir estágio em Ciência da Computação?,Como conseguir estágio em Ciência da Computação?,6,True,True,1,23.7,,P-C59C0D,teste
+2026-11-15T18:43:12,pergunta,Como criar um portfólio no GitHub?,Como criar um portfólio no GitHub?,9,True,True,1,11.7,,P-C59C0D,teste
+2026-11-15T18:44:06,pergunta,Quais profissões existem na área de tecnologia?,Quais profissões existem na área de tecnologia?,5,True,False,1,13.7,,P-10D259,teste
+2026-11-15T18:46:44,pergunta,O que estudar primeiro na área de tecnologia?,Como estudar código da melhor forma? | O que estudar primeiro na área de tecnologia?,4,True,True,2,132.2,,P-10D259,teste
+2026-11-15T18:47:39,categoria,Escolher um projeto inicial para praticar Python,Escolher um projeto inicial para praticar Python,11,True,True,1,13.5,,P-10D259,teste
+2026-11-15T18:48:15,categoria,Escrever um README claro para um projeto de programação,Escrever um README claro para um projeto de programação,10,True,True,1,8.1,,P-AB9EFA,teste
+2026-11-15T18:48:34,categoria,Conferir curso de Ciência da Computação no e-MEC,Conferir curso de Ciência da Computação no e-MEC,3,True,False,1,13.7,,P-AB9EFA,teste
+2026-11-15T18:48:50,categoria,Obter a Carteira de Trabalho Digital para o primeiro emprego,Obter a Carteira de Trabalho Digital para o primeiro emprego,7,True,True,1,11.2,,P-AB9EFA,teste
+2026-11-15T18:49:52,categoria,Organizar uma rotina inicial de estudo de programação,Organizar uma rotina inicial de estudo de programação,4,True,False,1,40.8,,P-AB9EFA,teste
+2026-11-15T21:08:24,pergunta,Como comecar a estudar python?,Como comecar a estudar python?,1,True,True,1,42.6,,,terminal
+2026-11-15T21:11:01,pergunta,Por onde eu comeco a programar?,Por onde eu comeco a programar?,,False,,1,56.9,,,terminal
+2026-11-15T21:14:21,categoria,Começar a estudar programação com Python,Começar a estudar programação com Python,1,True,True,1,58.0,,,terminal

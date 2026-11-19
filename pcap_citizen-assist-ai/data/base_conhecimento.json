@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "categoria": "Formação e estudos",
+    "titulo": "Começar a estudar programação com Python",
+    "palavras_chave": [
+      "aprender python",
+      "estudar python",
+      "comecar a programar",
+      "iniciar programacao",
+      "estudar programacao",
+      "primeiros passos python",
+      "aprender a programar",
+      "aprender codigo",
+      "logica com python"
+    ],
+    "resposta": "O tutorial oficial do Python mostra como usar o interpretador, trabalhar com números, textos e listas, escrever condições, repetições e funções. Comece por esses fundamentos, execute os exemplos e pratique com exercícios pequenos. O tutorial pressupõe alguma familiaridade com programação; se você nunca programou, combine-o com um curso introdutório.",
+    "documentos": [],
+    "onde": "Tutorial oficial da linguagem Python, na internet.",
+    "fonte": "https://docs.python.org/pt-br/3/tutorial/",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 2,
+    "categoria": "Formação e estudos",
+    "titulo": "Encontrar cursos gratuitos de tecnologia no Aprenda Mais (MEC)",
+    "palavras_chave": [
+      "curso gratis tecnologia",
+      "cursos gratuitos de programacao",
+      "aprender tecnologia de graca",
+      "cursos de informatica",
+      "cursos gratuitos mec",
+      "aprenda mais",
+      "curso online certificado",
+      "cursos online gratuitos",
+      "cursos gratis online",
+      "cursos gratis",
+      "cursos online"
+    ],
+    "resposta": "A plataforma Aprenda Mais, do MEC, oferece cursos livres gratuitos, on-line e com certificado digital. Acesse o catálogo e procure a área Informação e Comunicação. Esses certificados são de cursos livres: não substituem graduação nem criam vínculo acadêmico para estágio.",
+    "documentos": [
+      "Conta de acesso à plataforma, criada diretamente no site oficial."
+    ],
+    "onde": "Plataforma Aprenda Mais do Ministério da Educação.",
+    "fonte": "https://aprendamais.mec.gov.br/course/index.php?lang=pt_br",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 3,
+    "categoria": "Formação e estudos",
+    "titulo": "Conferir curso de Ciência da Computação no e-MEC",
+    "palavras_chave": [
+      "emec curso ciencia computacao",
+      "curso reconhecido pelo mec",
+      "verificar faculdade",
+      "consultar faculdade reconhecida",
+      "ciencia computacao e mec",
+      "consultar curso superior",
+      "instituicao reconhecida mec",
+      "faculdade autorizada",
+      "consultar curso no e mec",
+      "consultar curso emec",
+      "curso no emec",
+      "curso emec",
+      "curso no e mec",
+      "consultar um curso no e mec"
+    ],
+    "resposta": "Antes de escolher um curso superior, consulte o Cadastro e-MEC. Pesquise a instituição e o curso de Ciência da Computação para verificar os atos de autorização, reconhecimento e dados de avaliação disponíveis. O cadastro é público e é a referência oficial do MEC para instituições e cursos superiores.",
+    "documentos": [
+      "Nome da instituição e do curso que você deseja consultar."
+    ],
+    "onde": "Cadastro e-MEC, indicado na página oficial do Ministério da Educação.",
+    "fonte": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/cadastro-nacional-de-cursos-e-ies",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 4,
+    "categoria": "Formação e estudos",
+    "titulo": "Organizar uma rotina inicial de estudo de programação",
+    "palavras_chave": [
+      "rotina de estudos programacao",
+      "como estudar programacao",
+      "plano de estudos python",
+      "estudar ciencia computacao",
+      "organizar estudos de codigo",
+      "revisar python",
+      "praticar logica de programacao",
+      "o que estudar primeiro",
+      "como estudar codigo da melhor forma"
+    ],
+    "resposta": "Uma sequência prática é estudar um fundamento por vez e escrever programas pequenos para verificar se entendeu: variáveis e tipos, condições, repetições, funções e listas. O tutorial do Python apresenta esses recursos em capítulos separados; a ordem sugerida aqui é um plano introdutório de estudo, não uma exigência oficial.",
+    "documentos": [],
+    "onde": "Tutorial do Python, com capítulos de introdução, controle de fluxo e estruturas de dados.",
+    "fonte": "https://docs.python.org/pt-br/3/tutorial/",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 5,
+    "categoria": "Carreira e primeiro emprego",
+    "titulo": "Conhecer profissões e ocupações da área de TI",
+    "palavras_chave": [
+      "profissoes da computacao",
+      "carreiras em tecnologia",
+      "mercado trabalho ti",
+      "desenvolvedor de software",
+      "analista de sistemas",
+      "trabalhar com redes",
+      "areas de ti",
+      "quais profissoes",
+      "o que faz um programador"
+    ],
+    "resposta": "A Classificação Brasileira de Ocupações (CBO), do Ministério do Trabalho e Emprego, descreve ocupações exercidas no Brasil. Consulte a família de analistas de tecnologia da informação e outras ocupações para conhecer atividades como desenvolvimento de sistemas, redes e suporte. A CBO classifica ocupações: não é uma lista de vagas disponíveis nem regulamenta profissões.",
+    "documentos": [],
+    "onde": "Consulta oficial da CBO, Ministério do Trabalho e Emprego.",
+    "fonte": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/cbo",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 6,
+    "categoria": "Carreira e primeiro emprego",
+    "titulo": "Entender as regras de estágio em Ciência da Computação",
+    "palavras_chave": [
+      "conseguir estagio computacao",
+      "lei do estagio",
+      "direitos do estagiario",
+      "termo de compromisso estagio",
+      "primeiro estagio ti",
+      "carga horaria estagio",
+      "estagio facultativo obrigatorio",
+      "estagio ciencia computacao"
+    ],
+    "resposta": "O estágio é uma atividade educativa supervisionada. Para ser regular, deve existir termo de compromisso entre estudante, instituição de ensino e organização concedente, com atividades compatíveis com o curso e supervisão. No ensino superior, a jornada normalmente não pode passar de 6 horas por dia e 30 por semana, ressalvadas as situações previstas em lei. Estágio não obrigatório tem regras próprias de bolsa e auxílio-transporte.",
+    "documentos": [
+      "Matrícula e frequência regular na instituição de ensino.",
+      "Termo de Compromisso de Estágio assinado pelas partes.",
+      "Documentos adicionais conforme exigência da instituição ou da concedente."
+    ],
+    "onde": "Coordenação de estágio da faculdade e setor responsável da organização concedente.",
+    "fonte": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/proteja/duvidas-frequentes/duvidas-frequentes",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 7,
+    "categoria": "Carreira e primeiro emprego",
+    "titulo": "Obter a Carteira de Trabalho Digital para o primeiro emprego",
+    "palavras_chave": [
+      "carteira trabalho digital",
+      "tirar carteira de trabalho",
+      "ctps digital",
+      "primeiro emprego carteira",
+      "criar ctps",
+      "consultar carteira trabalho",
+      "documento para trabalhar",
+      "emitir carteira trabalho"
+    ],
+    "resposta": "A Carteira de Trabalho Digital pode ser acessada pelo aplicativo oficial ou pela internet. Para habilitar o serviço, a pessoa usa seu CPF e conta gov.br diretamente no canal oficial. O assistente não solicita esses dados. A carteira digital permite consultar informações e contratos de trabalho e não substitui documento de identificação civil.",
+    "documentos": [
+      "CPF e acesso à conta gov.br, informados somente no serviço oficial."
+    ],
+    "onde": "Serviço Obter a Carteira de Trabalho, no portal Gov.br ou no aplicativo oficial.",
+    "fonte": "https://www.gov.br/pt-br/servicos/obter-a-carteira-de-trabalho",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 8,
+    "categoria": "Carreira e primeiro emprego",
+    "titulo": "Pesquisar vagas no SINE e no Emprega Brasil",
+    "palavras_chave": [
+      "procurar vaga de emprego",
+      "buscar trabalho tecnologia",
+      "buscar vagas de estagio",
+      "primeiro emprego online",
+      "sine vagas",
+      "emprega brasil",
+      "vagas de trabalho",
+      "onde conseguir emprego",
+      "como procurar emprego"
+    ],
+    "resposta": "O SINE permite procurar vagas de trabalho com atendimento presencial ou digital. No Portal Emprega Brasil, você pode manter seu perfil profissional atualizado e consultar ofertas disponíveis para sua região; a existência de vagas de TI ou estágio depende da oferta atual. Faça login e preencha seus dados somente no site governamental, nunca no chatbot.",
+    "documentos": [
+      "Cadastro do trabalhador e documentos solicitados no portal oficial ou pelo posto SINE."
+    ],
+    "onde": "Portal Emprega Brasil (gov.br) ou posto de atendimento do SINE.",
+    "fonte": "https://www.gov.br/pt-br/servicos/buscar-emprego-no-sistema-nacional-de-emprego-sine",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 9,
+    "categoria": "Projetos e portfólio",
+    "titulo": "Criar um repositório de portfólio no GitHub",
+    "palavras_chave": [
+      "criar portfolio github",
+      "github para portfolio",
+      "publicar projetos github",
+      "subir codigo github",
+      "criar repositorio",
+      "guardar projetos online",
+      "portifolio programador",
+      "mostrar projetos para recrutador"
+    ],
+    "resposta": "Um repositório do GitHub guarda os arquivos do projeto e o histórico de alterações. Para iniciar um portfólio, crie um repositório, adicione seu código e um README que explique o projeto. Antes de publicar, retire senhas, chaves de API e informações pessoais. Um repositório pode ser público ou privado, conforme a escolha do responsável.",
+    "documentos": [
+      "Conta no GitHub, criada diretamente na plataforma.",
+      "Código de um projeto próprio que possa ser compartilhado."
+    ],
+    "onde": "Documentação oficial do GitHub sobre repositórios.",
+    "fonte": "https://docs.github.com/pt/repositories",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 10,
+    "categoria": "Projetos e portfólio",
+    "titulo": "Escrever um README claro para um projeto de programação",
+    "palavras_chave": [
+      "fazer readme",
+      "documentar projeto github",
+      "escrever readme.md",
+      "explicar meu codigo",
+      "documentacao de projeto",
+      "readme portfolio",
+      "markdown no github",
+      "descricao do projeto"
+    ],
+    "resposta": "O arquivo README.md pode apresentar o objetivo do projeto, como executar o código, suas principais funcionalidades e as fontes consultadas. O GitHub oferece suporte a Markdown para títulos, listas, links e exemplos de código. Use descrições verdadeiras do que você realmente implementou e mantenha as instruções atualizadas.",
+    "documentos": [
+      "Arquivo README.md do próprio projeto."
+    ],
+    "onde": "Documentação oficial do GitHub sobre escrita e formatação com Markdown.",
+    "fonte": "https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 11,
+    "categoria": "Projetos e portfólio",
+    "titulo": "Escolher um projeto inicial para praticar Python",
+    "palavras_chave": [
+      "ideias projetos python",
+      "projetos para iniciantes",
+      "meu primeiro projeto python",
+      "qual projeto fazer",
+      "projeto facil de programacao",
+      "praticar python projeto",
+      "sugestao de projeto",
+      "criar aplicativo simples",
+      "que projetos posso fazer",
+      "projetos posso fazer",
+      "fazer projeto",
+      "projetos para fazer"
+    ],
+    "resposta": "Para praticar estruturas apresentadas no tutorial oficial do Python, você pode criar uma calculadora simples, um gerenciador de tarefas em listas ou um catálogo de livros em dicionários. São sugestões didáticas, não uma lista oficial de projetos. Comece com uma versão pequena, teste os resultados e documente o que conseguiu implementar.",
+    "documentos": [],
+    "onde": "Tutorial oficial do Python, especialmente introdução e estruturas de dados.",
+    "fonte": "https://docs.python.org/pt-br/3/tutorial/",
+    "verificado_em": "2026-11-15"
+  },
+  {
+    "id": 12,
+    "categoria": "Projetos e portfólio",
+    "titulo": "Entender o registro de software no INPI",
+    "palavras_chave": [
+      "registrar programa de computador",
+      "proteger codigo fonte",
+      "direitos autorais software",
+      "registro software inpi",
+      "registrar aplicativo",
+      "propriedade intelectual software",
+      "proteger meu programa",
+      "meu codigo foi copiado",
+      "registrar software",
+      "registrar software no inpi"
+    ],
+    "resposta": "O INPI oferece um serviço on-line de registro de programa de computador, usado para reforçar a segurança jurídica sobre autoria ou titularidade do software. O pedido envolve cadastro e-INPI, pagamento de guia e procedimento eletrônico. A solicitação requer certificado digital qualificado aceito pelo INPI. O registro não é necessário apenas para começar a programar ou apresentar um exercício da faculdade.",
+    "documentos": [
+      "Cadastro no e-INPI.",
+      "Documentos e resumo hash do software, conforme instruções do INPI.",
+      "Certificado digital qualificado para solicitar o registro."
+    ],
+    "onde": "Serviço de registro de programa de computador no portal Gov.br/INPI.",
+    "fonte": "https://www.gov.br/pt-br/servicos/solicitar-o-registro-de-programa-de-computador",
+    "verificado_em": "2026-11-15"
+  }
+]
