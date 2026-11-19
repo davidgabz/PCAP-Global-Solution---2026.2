@@ -1,169 +1,546 @@
-Citizen Assist AI — Carreiras em Ciência da Computação
+# Citizen Assist AI — Carreiras em Ciência da Computação
 
-Global Solution 2026.2 — Pensamento Computacional e Automação com Python (FIAP)
+**Global Solution 2026.2 — Pensamento Computacional e Automação com Python | FIAP**
 
-1. Equipe e apresentação
+## 1. Equipe e apresentação
 
-Integrantes:
+### Integrantes
 
-David Gabriel — RM 574147
-Enzo Christino — RM 572047
-João Lucas — RM 571355
-Vídeo técnico (YouTube, não listado): https://youtu.be/ruzG0CyacgQ
+| Integrante | RM |
+|---|---|
+| David Gabriel | 574147 |
+| Enzo Christino | 572047 |
+| João Lucas | 571355 |
 
-Público escolhido: estudantes de Ciência da Computação e pessoas iniciando a carreira na área de tecnologia.
-Problema: orientações sobre estudos, estágio, profissões, documentos, projetos e portfólio estão espalhadas entre sites diferentes e nem sempre são fáceis de localizar.
-Solução: assistente em Python que responde perguntas a partir de uma base JSON de orientações com fonte e data de verificação.
-ODS relacionados: ODS 4 — Educação de Qualidade; ODS 8 — Trabalho Decente e Crescimento Econômico.
+**Vídeo técnico:** [Assistir à apresentação no YouTube](https://youtu.be/ruzG0CyacgQ)
 
-O assistente utiliza busca por regras, não modelos de IA generativa. As respostas são limitadas ao conteúdo da base de conhecimento. Há 12 orientações distribuídas em 3 categorias. A interface HTML é um complemento; a execução no terminal continua disponível para a avaliação de Python.
+**Público-alvo:** Estudantes de Ciência da Computação e pessoas que estão iniciando uma carreira na área de tecnologia.
 
-2. Como executar
+**ODS relacionados:**
+- ODS 4 — Educação de Qualidade.
+- ODS 8 — Trabalho Decente e Crescimento Econômico.
 
-É necessário Python 3. O projeto não depende de bibliotecas externas.
+### Problema identificado
 
-Terminal (modo obrigatório da disciplina): abra o terminal na pasta citizen-assist-ai e execute:
+Estudantes que estão começando na área de tecnologia frequentemente encontram dificuldades para localizar informações confiáveis sobre como estudar programação, conhecer profissões, procurar estágios, desenvolver projetos e montar um portfólio.
 
+Essas informações estão distribuídas entre diferentes sites, documentos e plataformas, dificultando o acesso a orientações organizadas e verificáveis.
+
+### Solução desenvolvida
+
+O **Citizen Assist AI** é um assistente desenvolvido em Python que oferece orientações sobre formação e carreira em Ciência da Computação.
+
+O sistema permite que o usuário faça perguntas e receba respostas fundamentadas em uma base de conhecimento local, incluindo fontes e datas de verificação.
+
+O projeto utiliza **busca baseada em regras e pontuação**, sem modelos de inteligência artificial generativa.
+
+A base possui **12 orientações distribuídas em 3 categorias**. Também foi desenvolvida uma interface HTML complementar, com um chatbot para participantes e um painel de estatísticas para o operador.
+
+---
+
+## 2. Tecnologias utilizadas
+
+O projeto foi desenvolvido utilizando:
+
+- **Python 3:** lógica principal, orientação a objetos, processamento de perguntas e indicadores.
+- **JSON:** armazenamento da base de conhecimento e do histórico de atendimentos.
+- **CSV:** exportação dos registros para análise.
+- **HTML, CSS e JavaScript:** interface web complementar.
+- **Biblioteca padrão do Python:** manipulação de arquivos, expressões regulares, datas, horários e servidor HTTP local.
+
+Não é necessário instalar bibliotecas externas.
+
+---
+
+## 3. Como executar o projeto
+
+### 3.1. Executar no terminal
+
+Abra a pasta que contém `main.py` no VS Code ou em outro editor.
+
+No terminal, execute:
+
+```bash
 python3 main.py
-No Windows, também pode funcionar python main.py ou py main.py.
+```
 
-O menu oferece: 1 digitar uma dúvida, 2 navegar por categorias, 3 visualizar indicadores e 0 sair. Opções inválidas são tratadas sem encerrar o programa.
+No Windows, também pode funcionar:
 
-Interface web local (opcional): no terminal, execute:
+```bash
+python main.py
+```
 
+O programa apresenta o seguinte menu:
+
+```text
+===== Citizen Assist AI =====
+
+1 - Digitar uma dúvida
+2 - Navegar por categorias
+3 - Ver indicadores
+0 - Sair
+```
+
+As entradas inválidas são tratadas sem encerrar o programa inesperadamente.
+
+### 3.2. Executar a interface web
+
+Na mesma pasta do projeto, execute:
+
+```bash
 python3 web_app.py
+```
+
 Com o servidor aberto, acesse:
 
-http://127.0.0.1:8000/ — página inicial;
-http://127.0.0.1:8000/usuario — chat do participante;
-http://127.0.0.1:8000/operador — chat e indicadores do operador.
-Não abra web/index.html diretamente no navegador: a interface depende do servidor Python local.
+**Página inicial:**
 
-3. Estrutura dos arquivos
+http://127.0.0.1:8000/
 
+**Chat do participante:**
+
+http://127.0.0.1:8000/usuario
+
+**Chat e estatísticas do operador:**
+
+http://127.0.0.1:8000/operador
+
+**Observação:** a interface web funciona localmente e depende do servidor Python. Não é possível utilizar todas as funcionalidades abrindo diretamente o arquivo HTML.
+
+---
+
+## 4. Estrutura do projeto
+
+```text
 citizen-assist-ai/
 ├── README.md
 ├── main.py
 ├── orientacao.py
 ├── base_conhecimento.py
 ├── assistente.py
-├── web_app.py                  # interface adicional
+├── web_app.py
 ├── web/
-│   └── index.html             # interface adicional
+│   └── index.html
 └── data/
     ├── base_conhecimento.json
     ├── historico.json
     └── atendimentos.csv
-Classes obrigatórias
+```
 
-Orientacao (orientacao.py): recebe os campos de um registro JSON (id, categoria, titulo, palavras_chave, resposta, documentos, onde, fonte, verificado_em) e os apresenta com exibir().
-BaseConhecimento (base_conhecimento.py): mantém caminho e orientacoes (lista de objetos Orientacao); usa carregar(), categorias(), por_categoria(), pontuar() e buscar().
-Assistente (assistente.py): mantém o nome, a base de conhecimento e o histórico; controla perguntas, navegação, registro, indicadores e exportação CSV.
-As classes se relacionam por composição:
+### Responsabilidade dos arquivos
 
+**`main.py`**
+
+Responsável por iniciar o programa e apresentar o menu principal de navegação no terminal.
+
+**`orientacao.py`**
+
+Contém a classe `Orientacao`, responsável por representar uma orientação individual.
+
+**`base_conhecimento.py`**
+
+Contém a classe `BaseConhecimento`, responsável pelo carregamento do JSON, organização por categorias e busca por pontuação.
+
+**`assistente.py`**
+
+Contém a classe `Assistente`, responsável pelas interações, histórico, avaliações, indicadores e exportação CSV.
+
+**`web_app.py`**
+
+Disponibiliza um servidor HTTP local que conecta a interface HTML à lógica desenvolvida em Python.
+
+**`web/index.html`**
+
+Contém a interface do chatbot e o painel do operador.
+
+**`data/base_conhecimento.json`**
+
+Armazena as orientações consultadas pelo programa.
+
+**`data/historico.json`**
+
+Armazena os atendimentos realizados.
+
+**`data/atendimentos.csv`**
+
+Contém a exportação dos registros de atendimento em formato tabular.
+
+---
+
+## 5. Orientação a objetos
+
+O projeto utiliza três classes principais.
+
+### Classe `Orientacao`
+
+Representa uma orientação individual da base de conhecimento.
+
+Seus principais atributos são:
+
+- `id`
+- `categoria`
+- `titulo`
+- `palavras_chave`
+- `resposta`
+- `documentos`
+- `onde`
+- `fonte`
+- `verificado_em`
+
+O método `exibir()` apresenta as informações no terminal.
+
+### Classe `BaseConhecimento`
+
+Responsável por carregar e organizar os registros.
+
+Seus principais métodos são:
+
+- `carregar()`
+- `categorias()`
+- `por_categoria()`
+- `pontuar()`
+- `buscar()`
+
+### Classe `Assistente`
+
+Responsável pelo funcionamento dos atendimentos.
+
+Seus principais métodos incluem:
+
+- `perguntar()`
+- `navegar()`
+- `registrar()`
+- `indicadores()`
+- `resumo_indicadores()`
+- `avaliar_facilidade()`
+- `exportar_csv()`
+
+### Composição entre as classes
+
+O sistema utiliza composição para relacionar os objetos:
+
+```text
 Assistente
-  └── base: BaseConhecimento
-        └── orientacoes: [Orientacao, Orientacao, ...]
-main.py cria a base, chama base.carregar(), cria o assistente e apresenta o menu.
+  └── BaseConhecimento
+        └── Lista de objetos Orientacao
+```
 
-4. Base de conhecimento e fontes
+A classe `Assistente` utiliza um objeto da classe `BaseConhecimento`, que armazena uma lista de objetos `Orientacao`.
 
-O arquivo data/base_conhecimento.json contém 12 orientações, divididas em 3 categorias: Formação e estudos; Carreira e primeiro emprego; Projetos e portfólio. Cada orientação contém os nove campos obrigatórios, ao menos três palavras-chave, resposta em linguagem simples, fonte e data de verificação.
+---
 
-As fontes são páginas oficiais de serviços públicos ou a documentação dos responsáveis pelas tecnologias citadas. Orientações de rotina de estudos e projetos são sugestões didáticas, não regras governamentais.
+## 6. Base de conhecimento
 
-Fontes consultadas
+A base de conhecimento está localizada em:
 
-01 — Começar a estudar programação com Python: https://docs.python.org/pt-br/3/tutorial/ (conferido em 2026-11-15)
-02 — Encontrar cursos gratuitos de tecnologia no Aprenda Mais (MEC): https://aprendamais.mec.gov.br/course/index.php?lang=pt_br (conferido em 2026-11-15)
-03 — Conferir curso de Ciência da Computação no e-MEC: https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/cadastro-nacional-de-cursos-e-ies (conferido em 2026-11-15)
-04 — Organizar uma rotina inicial de estudo de programação: https://docs.python.org/pt-br/3/tutorial/ (conferido em 2026-11-15)
-05 — Conhecer profissões e ocupações da área de TI: https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/cbo (conferido em 2026-11-15)
-06 — Entender as regras de estágio em Ciência da Computação: https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/proteja/duvidas-frequentes/duvidas-frequentes (conferido em 2026-11-15)
-07 — Obter a Carteira de Trabalho Digital para o primeiro emprego: https://www.gov.br/pt-br/servicos/obter-a-carteira-de-trabalho (conferido em 2026-11-15)
-08 — Pesquisar vagas no SINE e no Emprega Brasil: https://www.gov.br/pt-br/servicos/buscar-emprego-no-sistema-nacional-de-emprego-sine (conferido em 2026-11-15)
-09 — Criar um repositório de portfólio no GitHub: https://docs.github.com/pt/repositories (conferido em 2026-11-15)
-10 — Escrever um README claro para um projeto de programação: https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github (conferido em 2026-11-15)
-11 — Escolher um projeto inicial para praticar Python: https://docs.python.org/pt-br/3/tutorial/ (conferido em 2026-11-15)
-12 — Entender o registro de software no INPI: https://www.gov.br/pt-br/servicos/solicitar-o-registro-de-programa-de-computador (conferido em 2026-11-15)
-5. Regra de pontuação e confiança
+`data/base_conhecimento.json`
 
-A função normalizar() converte os textos para minúsculas e remove acentos, pontuação e espaços extras. Depois, pontuar() aplica:
+O arquivo contém **12 orientações**, organizadas em três categorias:
 
-+3 pontos para cada palavra-chave ou expressão completa da orientação encontrada na pergunta;
-+1 ponto para cada palavra distinta da pergunta com quatro letras ou mais que também apareça no título.
-buscar() devolve tuplas (pontos, orientacao) ordenadas da maior pontuação para a menor. O sistema mostra a melhor orientação e até duas alternativas pertinentes.
+### Formação e estudos
 
-ALTA: 6 pontos ou mais;
-MÉDIA: entre 3 e 5 pontos;
-Não encontrada: menos de 3 pontos; sugere reformular a pergunta ou navegar por categorias.
-Na navegação direta por categorias, a confiança por busca não se aplica.
+- Começar a estudar programação com Python.
+- Encontrar cursos gratuitos de tecnologia no Aprenda Mais, do MEC.
+- Conferir cursos de Ciência da Computação no e-MEC.
+- Organizar uma rotina inicial de estudos de programação.
 
-6. Atendimento, privacidade, histórico e CSV
+### Carreira e primeiro emprego
 
-O programa trata perguntas vazias, opções fora do intervalo e respostas s/n inválidas, sem encerrar inesperadamente.
-Não pede nome, CPF, telefone nem e-mail aos participantes. Perguntas contendo @ ou 8 ou mais dígitos são recusadas, sem registro.
-Cada participante web recebe um ID de sessão anônimo (P-XXXXXX); nomes não são armazenados.
-Toda orientação informa título, resposta, documentos/requisitos, onde consultar, fonte, data de verificação e aviso de que este assistente não é canal oficial.
-Os atendimentos são registrados em data/historico.json com data, origem, pergunta, ID da orientação, encontrou, ajudou, tentativas e tempo em segundos (além de campos auxiliares).
-O tempo é calculado com time.time() e o CSV é exportado com csv.DictWriter para data/atendimentos.csv.
-O painel do operador mostra respostas encontradas (%), taxa de acerto/ajudou (%), tempo médio, tentativas por atendimento, facilidade de uso (1 a 5), dúvidas sem solução, histórico por sessão e exportação CSV. As conversas de demonstração no terminal não são contabilizadas nos indicadores dos participantes externos.
+- Conhecer profissões e ocupações da área de TI.
+- Entender as regras de estágio em Ciência da Computação.
+- Obter a Carteira de Trabalho Digital.
+- Pesquisar vagas no SINE e no Emprega Brasil.
 
-7. Testes reais com usuários — 15/11/2026
+### Projetos e portfólio
 
-O sistema foi utilizado em 3 sessões de participantes identificados por códigos anônimos e gerou 10 atendimentos concluídos no modo teste. Foram 11 perguntas válidas, porque um atendimento exigiu uma reformulação. Cinco atendimentos foram feitos por pergunta em texto livre e cinco por navegação em categorias.
+- Criar um repositório de portfólio no GitHub.
+- Escrever um README para um projeto de programação.
+- Escolher um projeto inicial para praticar Python.
+- Entender o registro de software no INPI.
 
-A análise usa somente os registros modo: "teste". O historico.json também contém 3 atendimentos adicionais de demonstração no terminal, que não entram nos indicadores abaixo. O CSV do pacote final contém os 13 registros (10 de teste e 3 do terminal), conforme a exportação padrão do programa; use a coluna modo para distinguir os dois grupos.
+Cada registro possui os campos obrigatórios definidos no enunciado, incluindo pelo menos três palavras-chave, resposta, documentos ou requisitos, local de consulta, fonte e data de verificação.
 
-Indicador exigido	Resultado observado
-Participantes distintos (IDs de sessão)	3
-Atendimentos de teste concluídos	10
-Perguntas válidas, incluindo reformulações	11
-Resposta encontrada (%)	100,0% (10/10)
-Taxa de acerto — orientação ajudou (%)	60,0% (6/10)
-Tempo médio para encontrar (respostas encontradas)	30,4 segundos
-Tentativas por atendimento	1,1 (11/10)
-Facilidade de uso (1 a 5)	Não disponível: nenhuma nota foi registrada
-Avaliações de utilidade positivas	6
-Avaliações de utilidade negativas	4
-Interpretação importante: o percentual de 100% inclui as orientações selecionadas por categoria; não significa 100% de sucesso na busca por texto livre. A taxa de utilidade de 60% representa o julgamento dos participantes, não uma verificação automática da exatidão de todas as informações. Nenhum dos dez atendimentos foi encerrado sem uma orientação; quatro orientações encontradas foram avaliadas como não úteis.
+---
 
-Dúvidas que não foram resolvidas satisfatoriamente
+## 7. Funcionamento da busca e pontuação
 
-Os quatro registros com ajudou: false foram:
+A busca utiliza a função `normalizar()` para padronizar os textos.
 
-“Como começar a estudar Python?”
-“Quais profissões existem na área de tecnologia?”
-“Conferir curso de Ciência da Computação no e-MEC”
-“Organizar uma rotina inicial de estudo de programação”
-Essas dúvidas receberam orientação, mas os participantes avaliaram que não ajudou. Não há justificativas textuais registradas para as avaliações negativas, por isso não é possível afirmar a causa de cada uma.
+Essa função:
 
-Melhoria implementada a partir dos testes (18/11/2026)
+1. Converte os caracteres para minúsculas.
+2. Remove acentos.
+3. Remove pontuação.
+4. Elimina espaços desnecessários.
 
-Durante um atendimento, o participante perguntou inicialmente “Como estudar código da melhor forma?”, que não atingiu a pontuação mínima de busca, e precisou reformular para “O que estudar primeiro na área de tecnologia?”. Esse atendimento teve duas tentativas e tempo de 132,2 segundos.
+Depois da normalização, o método `pontuar()` compara a pergunta com cada orientação.
 
-Para tratar a dificuldade observada, foi adicionada a expressão "como estudar codigo da melhor forma" às palavras_chave da orientação ID 4 — “Organizar uma rotina inicial de estudo de programação”, no arquivo data/base_conhecimento.json.
+### Regras de pontuação
 
-Antes da alteração: a pergunta original não atingia 3 pontos na melhor orientação.
-Depois da alteração: a orientação ID 4 passou a receber 3 pontos (confiança MÉDIA) para a mesma pergunta.
-A verificação após a alteração foi feita executando a função de busca do programa. Não foram inventados novos atendimentos ou avaliações dos participantes: todos os indicadores apresentados continuam sendo os resultados originais dos testes.
+- **+3 pontos:** para cada palavra-chave ou expressão completa da orientação encontrada na pergunta.
+- **+1 ponto:** para cada palavra distinta da pergunta com quatro ou mais letras que também apareça no título da orientação.
 
-Nota de facilidade pendente
+O método `buscar()` retorna uma lista de tuplas no formato:
 
-A interface prevê avaliação da facilidade de uso de 1 a 5, mas todos os registros enviados possuem facilidade: null. Portanto, não foi calculada uma média. Caso a equipe ainda tenha avaliações reais anotadas, elas devem ser registradas com transparência; não é correto preencher notas por estimativa.
+```python
+(pontos, orientacao)
+```
 
-8. Integração com outras disciplinas
+As tuplas são ordenadas da maior pontuação para a menor.
 
-Não foram utilizadas integrações com outras disciplinas. Essa parte é opcional no enunciado. A interface HTML é apenas um complemento local e usa o mesmo algoritmo de pontuação do modo terminal.
+### Classificação de confiança
 
-9. Limitações
+| Pontuação | Confiança |
+|---|---|
+| 6 pontos ou mais | ALTA |
+| De 3 a 5 pontos | MÉDIA |
+| Menos de 3 pontos | Não encontrada |
 
-A base responde apenas aos assuntos previamente cadastrados e depende de palavras-chave; pode não reconhecer uma pergunta válida escrita de outra forma.
-A confiança representa correspondência textual, não uma garantia de que a orientação solucionará a dúvida.
-As fontes precisam ser revisadas periodicamente; o sistema não consulta a internet automaticamente para atualizar respostas.
-A interface web funciona localmente. A rota do operador não exige login; portanto, não é uma área protegida para publicação aberta na internet.
-O bloqueio automático de dados pessoais segue a regra do enunciado (@ ou 8 dígitos); não é um detector completo de todos os possíveis dados pessoais.
-A nota de facilidade não foi coletada nos dados atuais dos participantes.
-10. Entrega e vídeo
+O programa apresenta a orientação mais bem pontuada e até duas alternativas relevantes.
 
-Vídeo técnico: https://youtu.be/ruzG0CyacgQ
+Na navegação direta por categorias, a classificação de confiança não se aplica.
+
+---
+
+## 8. Privacidade e tratamento de entradas
+
+O sistema não solicita nome, CPF, telefone ou e-mail dos participantes.
+
+Para permitir a contagem dos usuários durante os testes, a interface gera um identificador anônimo por sessão, como:
+
+```text
+P-A1B2C3
+```
+
+O programa também bloqueia perguntas que contenham:
+
+- O caractere `@`.
+- Oito ou mais dígitos numéricos.
+
+Essas perguntas são recusadas e não entram no histórico.
+
+O sistema também trata entradas vazias, opções inválidas e avaliações fora das alternativas permitidas.
+
+As respostas apresentam a fonte, a data de verificação e um aviso de que o assistente não representa um canal oficial.
+
+---
+
+## 9. Histórico e indicadores
+
+Os atendimentos são registrados em:
+
+`data/historico.json`
+
+Cada registro contém informações como:
+
+- Data do atendimento.
+- Origem da consulta.
+- Pergunta realizada.
+- Identificador da orientação.
+- Resultado da busca.
+- Avaliação de utilidade.
+- Quantidade de tentativas.
+- Tempo gasto em segundos.
+- Identificador anônimo do participante.
+
+O tempo é medido utilizando `time.time()`.
+
+Os registros também podem ser exportados para:
+
+`data/atendimentos.csv`
+
+A exportação utiliza `csv.DictWriter`.
+
+### Indicadores calculados
+
+- Quantidade de atendimentos.
+- Quantidade de participantes.
+- Percentual de respostas encontradas.
+- Taxa de respostas consideradas úteis.
+- Tempo médio para encontrar uma orientação.
+- Média de tentativas por atendimento.
+- Facilidade de uso, em escala de 1 a 5.
+- Dúvidas sem solução.
+
+O painel do operador apresenta os indicadores e o histórico dos participantes.
+
+As interações realizadas no terminal para demonstração são separadas dos resultados dos testes com usuários externos.
+
+---
+
+## 10. Testes reais com usuários
+
+**Data dos testes:** 15 de novembro de 2026.
+
+Foram registrados **3 participantes identificados por códigos anônimos** e **10 atendimentos concluídos** no modo de teste.
+
+Os participantes realizaram 11 perguntas válidas no total, pois um dos atendimentos exigiu reformulação.
+
+Cinco atendimentos foram realizados por perguntas em texto livre e cinco pela navegação entre categorias.
+
+### Resultados obtidos
+
+| Indicador | Resultado |
+|---|---:|
+| Participantes distintos | 3 |
+| Atendimentos concluídos | 10 |
+| Perguntas válidas | 11 |
+| Respostas encontradas | 100,0% |
+| Respostas consideradas úteis | 60,0% |
+| Tempo médio para encontrar uma orientação | 30,4 segundos |
+| Média de tentativas por atendimento | 1,1 |
+| Avaliações positivas | 6 |
+| Avaliações negativas | 4 |
+| Facilidade de uso (1 a 5) | Não disponível |
+
+### Interpretação dos resultados
+
+Todos os dez atendimentos foram concluídos com uma orientação encontrada.
+
+Entretanto, **100% de respostas encontradas não significa 100% de satisfação ou assertividade**.
+
+Dos dez atendimentos, seis orientações foram consideradas úteis pelos participantes, enquanto quatro foram avaliadas como não úteis.
+
+O percentual de respostas encontradas também inclui os atendimentos realizados por navegação direta nas categorias.
+
+### Dúvidas que não foram resolvidas satisfatoriamente
+
+Quatro orientações foram encontradas, mas avaliadas como não úteis:
+
+1. **Como começar a estudar Python?**
+2. **Quais profissões existem na área de tecnologia?**
+3. **Conferir curso de Ciência da Computação no e-MEC.**
+4. **Organizar uma rotina inicial de estudo de programação.**
+
+Essas perguntas receberam respostas do programa, porém não atenderam às expectativas dos participantes.
+
+Como não foram registradas justificativas textuais das avaliações negativas, não é possível determinar com precisão o motivo de cada uma.
+
+### Facilidade de uso
+
+A aplicação possui uma avaliação de facilidade de uso em escala de 1 a 5.
+
+Entretanto, os arquivos dos testes enviados não apresentam notas registradas nesse campo.
+
+Por esse motivo, o indicador foi mantido como **não disponível**, sem atribuição de valores estimados.
+
+---
+
+## 11. Melhoria implementada após os testes
+
+Durante os testes, um participante utilizou inicialmente a pergunta:
+
+> Como estudar código da melhor forma?
+
+A pergunta não atingiu a pontuação mínima necessária para encontrar uma orientação confiável.
+
+O participante precisou reformular a dúvida para:
+
+> O que estudar primeiro na área de tecnologia?
+
+Esse atendimento exigiu duas tentativas e registrou um tempo de 132,2 segundos.
+
+### Problema identificado
+
+A base de conhecimento possuía uma orientação relacionada à organização dos estudos, mas não reconhecia a primeira formulação utilizada pelo participante.
+
+### Melhoria realizada
+
+Foi adicionada a expressão:
+
+```json
+"como estudar codigo da melhor forma"
+```
+
+À lista `palavras_chave` da orientação de ID 4:
+
+**Organizar uma rotina inicial de estudo de programação.**
+
+### Resultado da melhoria
+
+**Antes da alteração:**
+
+A pergunta original não atingia o mínimo de três pontos necessário para apresentar uma orientação.
+
+**Depois da alteração:**
+
+A mesma pergunta passou a encontrar a orientação correspondente com **3 pontos e confiança MÉDIA**.
+
+A melhoria foi verificada por meio da função de busca do programa.
+
+Os indicadores apresentados neste README continuam representando os testes originais, sem inclusão de atendimentos ou avaliações fictícias após a alteração.
+
+---
+
+## 12. Fontes consultadas
+
+As orientações utilizam fontes oficiais de serviços públicos ou documentações mantidas pelos responsáveis pelas tecnologias.
+
+| Assunto | Fonte |
+|---|---|
+| Aprendizado de Python | [Python Docs](https://docs.python.org/pt-br/3/tutorial/) |
+| Cursos gratuitos | [MEC — Aprenda Mais](https://aprendamais.mec.gov.br/course/index.php?lang=pt_br) |
+| Consulta de cursos superiores | [MEC — Cadastro e-MEC](https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/cadastro-nacional-de-cursos-e-ies) |
+| Rotina de estudos de programação | [Python Docs](https://docs.python.org/pt-br/3/tutorial/) |
+| Profissões da área de TI | [Ministério do Trabalho — CBO](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/cbo) |
+| Regras de estágio | [Ministério do Trabalho](https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/proteja/duvidas-frequentes/duvidas-frequentes) |
+| Carteira de Trabalho Digital | [Gov.br](https://www.gov.br/pt-br/servicos/obter-a-carteira-de-trabalho) |
+| Busca de emprego pelo SINE | [Gov.br](https://www.gov.br/pt-br/servicos/buscar-emprego-no-sistema-nacional-de-emprego-sine) |
+| Repositórios do GitHub | [GitHub Docs](https://docs.github.com/pt/repositories) |
+| Documentação README | [GitHub Docs](https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github) |
+| Projetos iniciais com Python | [Python Docs](https://docs.python.org/pt-br/3/tutorial/) |
+| Registro de software | [INPI — Gov.br](https://www.gov.br/pt-br/servicos/solicitar-o-registro-de-programa-de-computador) |
+
+**Data de verificação das orientações:** 15/11/2026.
+
+As recomendações sobre rotina de estudos e projetos são sugestões didáticas, não normas governamentais.
+
+---
+
+## 13. Decisões técnicas e limitações
+
+### Decisão técnica
+
+A principal decisão técnica foi utilizar uma base JSON com busca por pontuação, em vez de integrar um modelo generativo.
+
+Essa escolha permite compreender e explicar como cada orientação é encontrada, utilizar conteúdos estruturados e apresentar as fontes utilizadas.
+
+### Limitações identificadas
+
+- A busca depende de palavras-chave e pode não reconhecer perguntas formuladas de maneiras diferentes.
+- O nível de confiança representa correspondência textual, não garantia de que a orientação resolverá a dúvida.
+- As informações precisam ser revisadas periodicamente, pois o sistema não atualiza automaticamente as fontes pela internet.
+- A interface web foi desenvolvida para execução local.
+- A página do operador não utiliza autenticação e não deve ser publicada como um painel aberto na internet.
+- O bloqueio de dados pessoais atende à regra programada, mas não identifica todos os tipos possíveis de informação pessoal.
+- A nota de facilidade de uso não foi registrada nos testes atuais.
+
+---
+
+## 14. Integração com outras disciplinas
+
+Não foram utilizadas integrações com outras disciplinas.
+
+A interface HTML funciona como um complemento visual ao projeto de Python e utiliza a mesma lógica de busca e pontuação do programa em terminal.
+
+---
+
+## 15. Vídeo técnico
+
+A equipe gravou um vídeo técnico apresentando a implementação do Citizen Assist AI.
+
+A demonstração aborda a estrutura JSON, os conceitos de orientação a objetos, a normalização das perguntas, a pontuação, o funcionamento no terminal, a alteração de uma palavra-chave, o histórico, os indicadores e as limitações do projeto.
+
+**[Assistir ao vídeo técnico no YouTube](https://youtu.be/ruzG0CyacgQ)**
+
+---
+
+## 16. Considerações finais
+
+O Citizen Assist AI permitiu aplicar conceitos de programação Python, orientação a objetos, estruturas de dados, manipulação de arquivos e processamento de textos.
+
+Os testes com usuários ajudaram a identificar limitações da busca textual e oportunidades de melhoria na base de conhecimento.
+
+Como resultado, foi desenvolvido um assistente funcional, com respostas fundamentadas em fontes identificadas, histórico de atendimentos e indicadores que permitem avaliar sua utilização.
+
+O projeto demonstra como uma solução baseada em regras pode organizar informações e auxiliar estudantes em suas primeiras decisões relacionadas à formação e à carreira em Ciência da Computação.
